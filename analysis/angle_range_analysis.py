@@ -111,7 +111,7 @@ def angle_range(all_movs, stg, nodes, cfg):
                 ang_std_not_mov = np.nan
                 ang_p05_not_mov = np.nan
                 ang_mean_not_mov = np.nan
-                ang_p05_not_mov = np.nan
+                ang_p95_not_mov = np.nan
 
             tab_all.append(
                 [
