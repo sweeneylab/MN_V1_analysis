@@ -38,7 +38,7 @@ def plot_by_stage(cfg):
                 cc = cycle(plt.rcParams["axes.prop_cycle"].by_key()["color"])
 
                 for i, (gen, tab) in enumerate(tab_sub.groupby("Genotype")):
-                    freq_tab = tab.T.iloc[14:-1].astype("float32")
+                    freq_tab = tab.T.iloc[-25:-1].astype("float32")
                     a = freq_tab.mean(1)
                     b = freq_tab.std(1)
 
@@ -132,7 +132,7 @@ def plot_by_geno(cfg):
                 cc = cycle(plt.rcParams["axes.prop_cycle"].by_key()["color"])
 
                 for i, (stg, tab) in enumerate(tab_sub.groupby("Stage")):
-                    freq_tab = tab.T.iloc[14:-1].astype("float32")
+                    freq_tab = tab.T.iloc[-25:-1].astype("float32")
                     a = freq_tab.mean(1)
                     b = freq_tab.std(1)
 
