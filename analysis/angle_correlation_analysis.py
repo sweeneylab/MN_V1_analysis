@@ -89,7 +89,6 @@ def angle_correlation(all_movs, stg, name, nodes, cfg):
                         stg,
                         gen,
                         tid,
-                        name,
                         np.median(corr_active),
                         np.percentile(corr_active, 5),
                         np.percentile(corr_active, 95),
