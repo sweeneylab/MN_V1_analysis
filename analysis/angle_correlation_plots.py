@@ -15,11 +15,11 @@ def plot_by_stage(cfg):
 
     STAGES = TAB.Genotype.unique()
 
-    NAMES = TAB.Name.unique()
+    NAMES = TAB.feature_for.unique()
 
     for name in NAMES:
         for stg in STAGES:
-            tab_sub = TAB[(TAB.Stage == stg) & (TAB.Name == name)]
+            tab_sub = TAB[(TAB.Stage == stg) & (TAB.feature_for == name)]
 
             if len(tab_sub) > 0:
                 for feature in ["corr_median", "corr_p05", "corr_p95", "corr_skewness"]:
@@ -57,11 +57,11 @@ def plot_by_geno(cfg):
     TAB = pd.read_csv(f"{OUT_DIR}/angle_correlation_res.tab", sep="\t", index_col=0)
 
     GENO = TAB.Genotype.unique()
-    NAMES = TAB.Name.unique()
+    NAMES = TAB.feature_for.unique()
 
     for name in NAMES:
         for gen in GENO:
-            tab_sub = TAB[(TAB.Genotype == gen) & (TAB.Name == name)]
+            tab_sub = TAB[(TAB.Genotype == gen) & (TAB.feature_for == name)]
             if len(tab_sub) > 0:
                 for feature in ["corr_median", "corr_p05", "corr_p95", "corr_skewness"]:
                     f, ax = plt.subplots(figsize=(14, 4))
